@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TH2ETNW6WL"
+    ></script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Curiate</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link href="assets/images/favicon.png" rel="icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/script.js"></script>
+  </head>
+  <body
+    style="
+      background-image: url(./assets/images/investors-bg.jpg);
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+    "
+  >
+    <main>
+      <nav class="navbar navbar-expand-lg mt-lg-3 mb-lg-5">
+        <div class="container container-lg-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="./index.html">
+            <img
+              id="navbar-logo"
+              src="assets/images/logo-with-name.png"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-item nav-link" href="./index.html">Home</a>
+              <a class="nav-item nav-link" href="./learnmore.html"
+                >Learn More</a
+              >
+              <a class="nav-item nav-link" href="./partnerships.html"
+                >Enterprise</a
+              >
+              <a class="nav-item nav-link active" href="./meet-curiate.html"
+                >Demo</a
+              >
+              <a class="nav-item nav-link" href="./about.html">Company</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="content">
+        <div
+          class="container-fluid d-flex justify-content-center align-items-center"
+        >
+          <button
+            type="submit"
+            class="btn btn-frosted"
+            onclick="window.open('https://calendly.com/meetcuriate')"
+          >
+            BOOK A DISCOVERY CALL
+          </button>
+        </div>
+      </section>
+    </main>
+    <div class="container">
+      <footer class="text-center border-top border-dark">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div class="col-md-4 d-flex text-center p-3 copyright-text">
+            © 2024 Curiate, Inc. All rights reserved.
+          </div>
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+              <a class="text-muted" href="mailto:contact@curiate.cc">
+                <i class="bi bi-envelope-fill" id="icon-social-email"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a
+                class="text-muted"
+                href="https://www.instagram.com/curiate.cc/"
+                target="_blank"
+              >
+                <i class="bi bi-instagram" id="icon-social-instagram"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a
+                class="text-muted"
+                href="https://www.linkedin.com/company/curiateco/"
+                target="_blank"
+              >
+                <i class="bi bi-linkedin" id="icon-social-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // JavaScript to handle the active class toggle
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          // Remove 'active' class from all nav links
+          navLinks.forEach((link) => link.classList.remove("active"));
+          // Add 'active' class to the clicked link
+          this.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

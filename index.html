@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TH2ETNW6WL"
+    ></script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Curiate</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <link href="assets/images/favicon.png" rel="icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <link href="css/style.css" rel="stylesheet" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/js/home.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script>
+      function submitForm(event) {
+        event.preventDefault();
+    
+        const formData = {
+          fields: [
+            {
+              name: "firstname",
+              value: document.getElementById("firstname").value,
+            },
+            {
+              name: "lastname",
+              value: document.getElementById("lastname").value,
+            },
+            {
+              name: "email",
+              value: document.getElementById("email").value,
+            }
+          ],
+          context: {
+            pageUri: window.location.href,
+            pageName: document.title
+          }
+        };
+    
+        const portalId = "45697636";
+        const formId = "f79f5d40-0bfe-4a8f-8000-64a8de91861e";
+    
+        fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log("Success:", data);
+          alert("Form submitted successfully!");
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          alert("Error submitting the form.");
+        });
+      }
+    </script>
+    
+  </head>
+
+  <body>
+    <main>
+      <nav class="navbar navbar-expand-lg mt-lg-3 mb-lg-3">
+        <div class="container container-lg-fluid">
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <img id="navbar-logo" src="assets/images/logo-with-name.png" alt=""/>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-item nav-link px-3 active" href="./index.html">Home</a>
+              <a class="nav-item nav-link px-3" href="./learnmore.html">Learn More</a>
+              <a class="nav-item nav-link px-3" href="./partnerships.html"
+                >Enterprise</a
+              >
+              <!-- <a class="nav-item nav-link" href="./meet-curiate.html">Demo</a> -->
+              <a class="nav-item nav-link px-3" href="./about.html">Company</a>    
+            </div>
+          </div>
+        </div>
+      </nav>
+     
+      <section
+        class="d-flex align-items-center mt-lg-3 py-lg-4"
+        style=" z-index: 1; overflow: hidden; height: auto;"
+      >
+        <!-- <video
+          autoplay
+          loop
+          muted
+          playsinline
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+          "
+        >
+          <source src="./assets/videos/intro_1.mp4" type="video/mp4" />
+        </video> -->
+        <div class="container" style="position: relative; z-index: 1">
+          <div class="row" style="justify-content: flex-start">
+            <div
+              class="col-lg-4 d-flex flex-column justify-content-around order-2 order-lg-1"
+            >
+              <div class="mt-lg-2 pt-lg-5 my-4">
+                <p id="brand-name" class="mb-4" style="position: relative; z-index: 1; font-family: Space Grotesk; font-weight: 700;">
+                  CURIATE
+                </p>
+                <p
+                  id="brand-description"
+                  class="fs-6 lh-sm"
+                  style="position: relative; z-index: 1 "
+                >
+                  AI Personal Shoppers for all of your Customers
+                </p>
+                <p
+                  id="brand-description"
+                  class="mt-4"
+                  style="position: relative; z-index: 1"
+                >
+                Smart Recommendations and Real-time Support.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-2 order-1 order-lg-2"></div>
+            <div class="col-lg-2 order-1 order-lg-2"></div>
+            <div class="col-lg-4 order-1 order-lg-2" style="margin-top: 1rem;">
+              <div class="container">
+                <div class="row" >
+                  <form id="hubspotForm" method="POST" onsubmit="submitForm(event)" class="px-4 py-3 rounded" style="background-color: #f1f2f3;">
+                    <div class="d-flex flex-column ">
+                      <div class="my-2 d-flex flex-column">
+                        <label for="firstname" class="fw-bold pb-2">Website:</label>
+                        <input type="text" id="firstname" name="firstname" class="outline-0 py-1 bg-transparent rounded " style=" outline: none; border: 2px solid black; width: 100%;" required>
+                      </div>
+                      <div class="my-2 d-flex flex-column">
+                        <label for="email" class="fw-bold  pb-2">Contact Email:</label>
+                        <input type="email" id="email" name="email" class="py-1 bg-transparent rounded" style="outline: none; border: 2px solid black; width: 100%;" required>
+                      </div>
+                      <div class="my-2 d-flex flex-column">
+                        <label for="lastname" class="fw-bold  pb-2">Contact Number:</label>
+                        <input type="number" id="lastname" name="lastname" class="outline-0 py-1 bg-transparent rounded " style="outline: none; border: 2px solid black; width:100%;" required>
+                     </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+
+                      <button type="submit" class="home-signup-btn px-4 py-1 my-3 rounded" style="border: 2px solid black;">Submit</button>
+                    </div>
+                  </form>
+                  
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <section class="d-flex  mb-lg-0 py-lg-0" style="background-color: white;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4 d-flex flex-column justify-content-center order-2 order-lg-1">
+                    <div>
+                      <div class="mt-4 mb-10 ">
+                        <h3 class="bg-dark text-white fs-6 rounded-3 px-3 py-3 custom-font" style="letter-spacing: 2px; text-align: center;">HYPER
+                          PERSONALIZATION</h3>
+                       </div>
+                       <div>
+                        <p class="fs-5 mt-2" style="text-align: start; font-weight: 400; font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;">
+                          Customers expect quick responses, but wait times average 12 hours (2024). CURIATE AI's AI-powered personal shoppers provide instant answers, potentially improving satisfaction and retention.
+  
+                        </p>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-7 order-1 order-lg-2 d-flex justify-content-end p-0">
+                      <img id="learn-more-img-pg-2" src="./assets/CURI/2.png" alt="">
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <section class="d-flex align-items-center" style="background-color: #b4b4b4;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 d-flex align-items-center justify-content-center text-center flex-column order-2 order-lg-1">
+                      <h2 class="text-white my-3">Don’t Let Sales Slip Away</h2>                     
+                      <h1 class="my-4">See CURIATE AI personal shoppers in Action</h1>
+                      <h4 class="mb-4">Reserve your Spot <a href="" class="text-dark fw-bold">FREE </a>for the first <br> <a href="" class="text-dark fw-bold">30 DAYS </a></h4>
+                      <div class="my-2">
+                        <button class="signup-btn border-1 px-5 py-2 bg-dark text-white rounded" onclick="scrollToTop()">SIGNUP</button>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-end p-0">
+                      <img id="learn-more-copy-pg-5" src="./assets/CURI/6.png" alt="">
+                  </div>
+              </div>
+          </div>
+        </section>
+            
+        <!-- logo slider-->
+        <section class="section-2">
+          <div class="slider">
+        <div class="slide-track">
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/1.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/2.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/3.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/4.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/5.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/6.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/7.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/8.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/7.png" alt="">
+          </div>
+
+          <!-- ----- -->
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/1.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/2.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/3.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/4.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/5.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/6.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/7.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/8.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="./assets/Technology partners LOGOS/5.png" alt="">
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section class="d-flex align-items-center" style="background-color: #ACA39A;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 d-flex align-items-center justify-content-center text-center flex-column order-2 order-lg-1">
+                      <h2 class="text-white my-3 "><u>Not A Shopify Store ? No problem!</u></h2>                     
+                      <h1 class="my-4 fs-4">Want CURIATE AI Personal Shoppers and 24/7 AI Support?</h1>
+                      <h1 class="mb-4 fs-4">Learn how CURIATE AI can enhance your
+                        e-commerce experience, even if you’re
+                        not on Shopify</h1>
+                      <div>
+                        <button class="signup-btn border-1 my-4 px-5 fs-5 py-2 bg-dark text-white rounded" onclick="scrollToTop()">SignUp For More Informaton </button>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-end p-0">
+                      <img id="learn-more-copy-pg-5" src="./assets/CURI/7.png" alt="">
+                  </div>
+              </div>
+          </div>
+        </section>
+        
+        <section class="d-flex align-items-center my-lg-4 py-lg-4">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1" style="text-align: center;">
+                   <div>
+                    <h1 class="text-dark">AI-Powered Personal Shoppers for
+                      Shopify Fashion Brands</h1>
+                   </div>
+                   <div class="container mt-3 mb-4">
+                    <div
+                      class="d-grid gap-4"
+                      style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));"
+                    >
+                      <!-- Card 1 -->
+                      <div class="card h-100 shadow">
+                        <div class="card-body d-flex justify-content-center align-items-center" style="background-color: #e4e2e2;">
+                          <p class="card-text fw-normal fs-6">"You are Missing Opportunities for Your Online Shoppers."</p>
+                        </div>
+                      </div>
+                  
+                      <!-- Card 2 -->
+                      <div class="card h-100 shadow" style="background-color: #e4e2e2;">
+                        <div class="card-body">
+                          <p class="card-text fw-normal fs-6">"The average cart abandonment rate for fashion e-commerce is 84.4%, leading to billions in lost sales annually."</p>
+                        </div>
+                      </div>
+                  
+                      <!-- Card 3 -->
+                      <div class="card h-100 shadow" style="background-color: #e4e2e2;">
+                        <div class="card-body">
+                          <p class="card-text fw-normal fs-6">"Without AI personal shoppers, you're missing out on more revenue and satisfaction."</p>
+                        </div>
+                      </div>
+                  
+                      <!-- Card 4 -->
+                      <div class="card h-100 shadow" style="background-color: #e4e2e2;">
+                        <div class="card-body">
+                          <p class="card-text fw-normal fs-6">"Without Curiate AI, how much are unanswered questions costing you from your customers?"</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="learn-more-btn my-3">
+                    <button class="px-4 py-2 rounded border-0 fs-6 shadow" style="background-color:rgb(227, 224, 224); ">Learn More</button>
+                  </div>
+                      
+                  </div>
+                  <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-end p-0">
+                      <img id="learn-more-img-pg-2" src="./assets//CURI//1.png" alt="">
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <section class="d-flex align-items-center mb-4" style="background-color: #CCB8A0">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 d-flex align-items-center justify-content-center text-center flex-column order-2 order-lg-1">
+                      <h2 class=" my-3 fs-1 ">The Future of Fashion Retail</h2>
+                      <div class="px-3 py-4 my-3 rounded" style="background-color: #e6e3e3;">
+                        <h1 class="mb-4 fs-5">“AI personal shoppers and customer service
+                          could be the key to not only preventing
+                          revenue loss from cart abandonment but
+                          also driving significant growth in the
+                          future.”</h1>
+                        <h1 class="mb-4 fs-5">The Future of E-commerce: Enhancing Customer
+                          Experience Through AI-Driven Personalization
+                          </h1>
+                        <div>
+                          <button class="signup-btn border-1 mt-3 px-5 fs-6 py-2 bg-dark text-white rounded">DOWNLOHAD THE MANIFESTO </button>
+                        </div>
+                      </div>                     
+                  </div>
+                  <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-end p-0">
+                      <img id="learn-more-copy-pg-5" src="./assets/CURI/8.png" alt="">
+                  </div>
+              </div>
+          </div>
+        </section>
+       
+        </div>
+    </main>
+    <div class="container">
+      <footer class="text-center border-top border-dark">
+        <div
+          class="d-flex flex-wrap justify-content-between align-items-center"
+        >
+          <div class="col-md-4 d-flex text-center p-3 fs-6 copyright-text">
+            © 2024 Curiate, Inc. All rights reserved.
+          </div>
+          <ul class="nav d-flex col-md-4 justify-content-end list-unstyled">
+            <li class="ms-3">
+              <a class="text-muted" href="mailto:contact@curiate.cc">
+                <i class="bi bi-envelope-fill" id="icon-social-email"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a
+                class="text-muted"
+                href="https://www.instagram.com/curiate.cc/"
+                target="_blank"
+              >
+                <i class="bi bi-instagram" id="icon-social-instagram"></i>
+              </a>
+            </li>
+            <li class="ms-3">
+              <a
+                class="text-muted"
+                href="https://www.linkedin.com/company/curiateco/"
+                target="_blank"
+              >
+                <i class="bi bi-linkedin" id="icon-social-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script>
+      function scrollToTop() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'  // This makes the scrolling smooth
+          });
+      }
+  </script>
+  
+    <script>
+      // JavaScript to handle the active class toggle
+      const navLinks = document.querySelectorAll('.nav-link');
+  
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          // Remove 'active' class from all nav links
+          navLinks.forEach(link => link.classList.remove('active'));
+          // Add 'active' class to the clicked link
+          this.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
